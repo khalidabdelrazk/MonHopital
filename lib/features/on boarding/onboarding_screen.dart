@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mon_hopital/features/on%20boarding/widgets/doc_logo_and_name.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -6,7 +7,11 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Onboarding Screen"),
+      body: SafeArea(child: SingleChildScrollView(child: Column(
+        children: [
+          DocLogoAndName()
+        ],
+      ),)),
     );
   }
 }
