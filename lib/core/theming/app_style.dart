@@ -23,4 +23,9 @@ class AppStyle {
     fontWeight: FontWeight.w600,
     color: AppColors.gray,
   );
+  static TextStyle lightSimiBold16 = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.light,
+  );
 }

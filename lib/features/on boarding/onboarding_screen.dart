@@ -34,7 +34,7 @@ class OnboardingScreen extends StatelessWidget {
                   height: 52.h,
                   width: double.infinity,
                   backgroundColor: AppColors.primaryBlueColor,
-                  child: "Get Started",
+                  body: Text("Get Started",style: AppStyle.lightSimiBold16,),
                 ),
               ],
             ),

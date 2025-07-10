@@ -1,33 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mon_hopital/core/theming/app_colors.dart';
 
 class CustomElevatedButton extends StatelessWidget {
-  final String child;
-  final Color? backgroundColor;  
-  final VoidCallback? onPressed;
-  final double? width, height;
+  final Widget body;
+  final Color? color;
+  final Color? backgroundColor;
+  final int? borderRadius;
+  final void Function()? onPressed;
+  final double width, height;
 
-  const CustomElevatedButton({
+  CustomElevatedButton({
     super.key,
-    required this.child,
+    required this.body,
     this.onPressed,
-    this.width,
-    this.height, this.backgroundColor,
-  });
+    this.color,
+    this.backgroundColor,
+    this.borderRadius,
+    this.width = double.infinity,
+    double? height,
+  }) : height = height ?? 52.h;
 
+  
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
       height: height,
       child: ElevatedButton(
-        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
           backgroundColor: backgroundColor ?? AppColors.primaryBlueColor,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+            side: borderRadius?.toDouble() != null
+                ? BorderSide(
+                    width: borderRadius?.toDouble() ?? 0,
+                    color: Theme.of(context).primaryColor,
+                  )
+                : BorderSide.none,
+          ),
         ),
-        child: Text(child),
+        onPressed: onPressed,
+        child: body,
       ),
     );
   }
