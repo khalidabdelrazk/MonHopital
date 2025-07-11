@@ -31,9 +31,9 @@ class OnboardingScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 30.h,),
                 CustomElevatedButton(
-                  height: 52.h,
-                  width: double.infinity,
-                  backgroundColor: AppColors.primaryBlueColor,
+                  onPressed: () {
+                    // Navigate to the next screen or perform an action
+                  },
                   body: Text("Get Started",style: AppStyle.lightSimiBold16,),
                 ),
               ],

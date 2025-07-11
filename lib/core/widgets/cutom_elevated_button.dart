@@ -4,11 +4,13 @@ import 'package:mon_hopital/core/theming/app_colors.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final Widget body;
-  final Color? color;
+  final Color? color; // <-- Foreground (text/icon) color
   final Color? backgroundColor;
-  final int? borderRadius;
+  final int? borderWidth;
+  final Color? borderColor;
   final void Function()? onPressed;
   final double width, height;
+  final double borderRadius;
 
   CustomElevatedButton({
     super.key,
@@ -16,12 +18,13 @@ class CustomElevatedButton extends StatelessWidget {
     this.onPressed,
     this.color,
     this.backgroundColor,
-    this.borderRadius,
+    this.borderColor,
+    this.borderWidth,
+    this.borderRadius = 16.0,
     this.width = double.infinity,
     double? height,
   }) : height = height ?? 52.h;
 
-  
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -29,14 +32,14 @@ class CustomElevatedButton extends StatelessWidget {
       height: height,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
+          foregroundColor: Colors.transparent, // ← text/icon color
           backgroundColor: backgroundColor ?? AppColors.primaryBlueColor,
-          elevation: 0,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-            side: borderRadius?.toDouble() != null
+            borderRadius: BorderRadius.circular(borderRadius),
+            side: borderColor != null
                 ? BorderSide(
-                    width: borderRadius?.toDouble() ?? 0,
-                    color: Theme.of(context).primaryColor,
+                    color: borderColor!,
+                    width: borderWidth?.toDouble() ?? 1,
                   )
                 : BorderSide.none,
           ),
