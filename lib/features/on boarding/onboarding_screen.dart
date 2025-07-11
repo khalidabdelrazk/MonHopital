@@ -13,7 +13,6 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Column(
@@ -33,17 +32,20 @@ class OnboardingScreen extends StatelessWidget {
                   style: AppStyle.onboardingBody,
                 ),
                 SizedBox(height: 30.h,),
-                CustomElevatedButton(
-                  onPressed: () {
-                    // Navigate to the next screen or perform an action
-                  },
-                  backgroundColor: AppColors.primaryBlueColor,
-                  body: Text("Get Started",style: AppStyle.lightSimiBold16,),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: CustomElevatedButton(
+                    onPressed: () {
+                      // Navigate to the next screen or perform an action
+                    },
+                    backgroundColor: AppColors.primaryBlueColor,
+                    body: Text("Get Started",style: AppStyle.lightSimiBold16,),
+                  ),
                 ),
               ],
             ),
           ),
-        ),
+
       ),
     );
   }

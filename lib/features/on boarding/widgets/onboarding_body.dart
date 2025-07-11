@@ -39,7 +39,7 @@ class OnboardingBody extends StatelessWidget {
 
           // Bottom text + better gradient
           Positioned(
-            bottom: 0,
+            bottom: -30.h,
             left: 0,
             right: 0,
             child: Container(
