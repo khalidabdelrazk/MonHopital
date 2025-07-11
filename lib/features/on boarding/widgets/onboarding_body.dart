@@ -39,7 +39,7 @@ class OnboardingBody extends StatelessWidget {
 
           // Bottom text + better gradient
           Positioned(
-            bottom: -35.h,
+            bottom: 0,
             left: 0,
             right: 0,
             child: Container(
@@ -49,7 +49,7 @@ class OnboardingBody extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
-                   colors: [
+                  colors: [
                     Colors.white,
                     Color(0xCCFFFFFF), // ~80% opacity
                     Color(0xf1FFFFFF), // ~50%
@@ -60,12 +60,11 @@ class OnboardingBody extends StatelessWidget {
                 ),
               ),
               child: Center(
-                child: 
-                  Text(
-                    "Best Doctor\nAppointment App",
-                    textAlign: TextAlign.center,
-                    style: AppStyle.onboardingSubtitle,
-                  ),
+                child: Text(
+                  "Best Doctor\nAppointment App",
+                  textAlign: TextAlign.center,
+                  style: AppStyle.onboardingSubtitle,
+                ),
               ),
             ),
           ),
