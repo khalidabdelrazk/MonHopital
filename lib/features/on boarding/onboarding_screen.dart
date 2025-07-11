@@ -18,6 +18,9 @@ class OnboardingScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Column(
               children: [
+                SizedBox(
+                  height: 20.h,
+                ), // Add some spacing at the top
                 DocLogoAndName(),
                 SizedBox(
                   height: 35.h,
@@ -34,6 +37,7 @@ class OnboardingScreen extends StatelessWidget {
                   onPressed: () {
                     // Navigate to the next screen or perform an action
                   },
+                  backgroundColor: AppColors.primaryBlueColor,
                   body: Text("Get Started",style: AppStyle.lightSimiBold16,),
                 ),
               ],
