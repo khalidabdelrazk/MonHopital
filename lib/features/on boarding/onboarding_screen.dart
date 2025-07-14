@@ -14,39 +14,41 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
-        child: Column(
-          children: [
-            SizedBox(height: 20.h), // Add some spacing at the top
-            DocLogoAndName(),
-            SizedBox(
-              height: 35.h,
-            ), // Add some spacing between the logo and the body
-            OnboardingBody(),
-            SizedBox(height: 30.h),
-            Text(
-              "Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.",
-              textAlign: TextAlign.center,
-              style: AppStyle.onboardingBody,
-            ),
-            SizedBox(height: 30.h),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: CustomElevatedButton(
-                onPressed: () {
-                  // Navigate to the next screen or perform an action
-                  Navigaton(context).pushNamedAndRemoveUntil(
-                    Routes.loginSceen,
-                    arguments: null,
-                    predicate: (route) => false,
-                  ); // Remove all previous routes;
-                },
-                backgroundColor: AppColors.primaryBlueColor,
-                body: Text("Get Started", style: AppStyle.lightSimiBold16),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: Column(
+            children: [
+              SizedBox(height: 20.h), // Add some spacing at the top
+              const DocLogoAndName(),
+              SizedBox(
+                height: 35.h,
+              ), // Add some spacing between the logo and the body
+              const OnboardingBody(),
+              SizedBox(height: 30.h),
+              Text(
+                "Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.",
+                textAlign: TextAlign.center,
+                style: AppStyle.onboardingBody,
               ),
-            ),
-          ],
+              SizedBox(height: 30.h),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: CustomElevatedButton(
+                  onPressed: () {
+                    // Navigate to the next screen or perform an action
+                    Navigaton(context).pushNamedAndRemoveUntil(
+                      Routes.loginSceen,
+                      arguments: null,
+                      predicate: (route) => false,
+                    ); // Remove all previous routes;
+                  },
+                  backgroundColor: AppColors.primaryBlueColor,
+                  body: Text("Get Started", style: AppStyle.lightSimiBold16),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

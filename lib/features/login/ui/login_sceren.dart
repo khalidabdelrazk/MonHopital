@@ -35,18 +35,18 @@ class _LoginScerenState extends State<LoginSceren> {
                   style: AppStyle.grayRegular14,
                 ),
                 verticalSpacing(20),
-                AppTextFormField(hintText: "Email"),
+                const AppTextFormField(hintText: "Email"),
                 verticalSpacing(16),
                 AppTextFormField(
                   hintText: "Password",
                   obscureText: _isPasswordVisible,
-                  suffixIcon: IconButton(
-                    icon: Icon(
+                  suffixIcon: GestureDetector(
+                    child: Icon(
                       !_isPasswordVisible
                           ? Icons.visibility
                           : Icons.visibility_off,
                     ),
-                    onPressed: () {
+                    onTap: () {
                       setState(() {
                         _isPasswordVisible = !_isPasswordVisible;
                       });
@@ -70,9 +70,9 @@ class _LoginScerenState extends State<LoginSceren> {
                 body: Text("Get Started", style: AppStyle.lightSimiBold16),
               ),
               verticalSpacing(24),
-              TermsAndConditionText(),
+              const TermsAndConditionText(),
               verticalSpacing(18),
-              Align(alignment: Alignment.center, child: AlreadyHaveAccount()),
+              const Align(alignment: Alignment.center, child: AlreadyHaveAccount()),
               ],
             ),
           ),

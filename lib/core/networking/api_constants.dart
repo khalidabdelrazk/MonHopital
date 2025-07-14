@@ -18,9 +18,11 @@ class ApiErrors{
   static const String timeoutError = 'Timeout Error';
   static const String defaultError = 'Default Error';
   static const String cacheError = 'Cache Error';
-  static const String notInternetError = 'No Internet Error';
+  static const String noInternetError = 'No Internet Error';
   static const String retryAgainMessage = 'Retry Again Message';
   static const String leadingMessage = 'Leading Message';
   static const String ok = 'Ok';
+
+  static const String badRequestError = 'Bad Request Error';
 
 }
